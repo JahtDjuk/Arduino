@@ -8,13 +8,19 @@ void setup() {
   //
   pinMode(LED,OUTPUT); // pin set to output as it powers the LED
   pinMode(POTEN, INPUT); // pin set to input as it is erading the value from the potentiometer
+  Serial.begin(9600); // Initiliaze serial communication
+
 }
+
 
 void loop() {
   // Read value from potentiometer
   //
   int value = analogRead(POTEN);
-  
+  // Print value
+  //
+  Serial.print("Value Read: ");
+  Serial.println(value);
   // Turn the LED on
   //
   digitalWrite(LED,HIGH);
